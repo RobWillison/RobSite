@@ -20,6 +20,13 @@ DivClass = function Div(jqueryDiv) {
         return parseFloat(distanceFromTop);
     }
 
+    this.getHeight = function () {
+        distanceFromTop = this.jqueryDiv.css('height');
+        distanceFromTop = distanceFromTop.slice(0, -2);
+
+        return parseFloat(distanceFromTop);
+    }
+
     this.setTop = function (top) {
         this.jqueryDiv.css('top', top + 'px');
     }
@@ -45,6 +52,10 @@ DivClass = function Div(jqueryDiv) {
 
         var distanceFromTop = width * Math.sin(this.rotation * (Math.PI / 180));
 
+        if (this.jqueryDiv.hasClass('end')) {
+            return this.getTop();
+        }
+
         return this.getTop() + distanceFromTop;
 
     }
@@ -52,13 +63,19 @@ DivClass = function Div(jqueryDiv) {
 
 ArmClass = function Arm(segments) {
     this.segments = segments;
+    this.extension = 0;
+    
+    this.position = 0;
 
     this.setExtension = function (extension) {
-
+        
+        this.extension = extension;
+        
         var previousSegment;
 
         var segmentExtension = extension / this.segments.length;
-        var armWidth = this.segments[0].leftArm.width;
+
+        var armWidth = this.segments[0].leftArm.width - getVwInPx(4);
 
         var angle = Math.asin(segmentExtension / armWidth) / (Math.PI / 180);
 
@@ -71,8 +88,11 @@ ArmClass = function Arm(segments) {
             }
 
             previousSegment = segment;
-        })
-    }
+        });
+
+        var grabberPos = previousSegment.getEndPos();
+        $('#grabber').css('top', grabberPos + 'px');
+    };
 }
 
 ArmSegmentClass = function ArmSegment(leftArm, rightArm) {
