@@ -12,6 +12,10 @@ var PageClass = function Page(position, div) {
     this.setTop = function (top) {
         this.div.css('top', top + 'px');
     }
+
+    this.setHeight = function (height) {
+        this.div.css('height', height + 'px');
+    }
     
     this.drop = function () {
         var currentPosition = this.div.css('top');
@@ -22,10 +26,11 @@ var PageClass = function Page(position, div) {
         var self = this;
 
         var interval = setInterval(function () {
-            if (currentPosition < ($(window).height() * 0.95)) {
+            if (currentPosition < ($(window).height() * 1)) {
                 currentPosition += getVwInPx(1);
 
                 self.div.css('top', currentPosition + 'px');
+                self.div.css('height', ($(window).height() - currentPosition) + 'px');
             } else {
                 clearInterval(interval);
             }

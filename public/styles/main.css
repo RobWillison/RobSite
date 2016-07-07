@@ -1,9 +1,9 @@
 body {
   background-color: lawngreen;
-  overflow: hidden;
 }
 .scissor-arm {
   position: absolute;
+  left: 0vw;
   -webkit-transition: left 0.2s;
   /* For Safari 3.1 to 6.0 */
   transition: left 0.2s;
@@ -41,20 +41,84 @@ body {
 }
 .grabber {
   position: absolute;
+  left: 0vw;
   width: 16vw;
-  height: 5vw;
-  border-radius: 2vw;
-  -webkit-border-radius: 2vw;
-  background-color: red;
+  height: 14vw;
   -webkit-transition: left 0.2s;
   /* For Safari 3.1 to 6.0 */
   transition: left 0.2s;
 }
+.grabber-img {
+  position: absolute;
+  width: 16vw;
+  height: 14vw;
+}
+.grabber-arm-left {
+  position: absolute;
+  width: 4vw;
+  height: 4vw;
+  top: 10vw;
+  left: 0.5vw;
+}
+.grabber-arm-right {
+  position: absolute;
+  width: 4vw;
+  height: 4vw;
+  top: 10vw;
+  left: 11.5vw;
+}
+.spin-anticlockwise {
+  -webkit-animation: spin-anit 2s linear infinite;
+  -moz-animation: spin-anit 2s linear infinite;
+  animation: spin-anit 2s linear infinite;
+}
+@-moz-keyframes spin-anit {
+  100% {
+    -moz-transform: rotate(40deg);
+  }
+}
+@-webkit-keyframes spin-anit {
+  100% {
+    -webkit-transform: rotate(40deg);
+  }
+}
+@keyframes spin-anit {
+  100% {
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+  }
+}
+.spin-clockwise {
+  -webkit-animation: spin-clockwise 2s linear infinite;
+  -moz-animation: spin-clockwise 2s linear infinite;
+  animation: spin-clockwise 2s linear infinite;
+}
+@-moz-keyframes spin-clockwise {
+  100% {
+    -moz-transform: rotate(-40deg);
+  }
+}
+@-webkit-keyframes spin-clockwise {
+  100% {
+    -webkit-transform: rotate(-40deg);
+  }
+}
+@keyframes spin-clockwise {
+  100% {
+    -webkit-transform: rotate(-40deg);
+    transform: rotate(-40deg);
+  }
+}
 .page {
   position: absolute;
   width: 80vw;
-  height: 50vh;
-  left: 0vw;
-  top: 95vh;
-  background-color: aqua;
+  height: 0vh;
+  text-align: center;
+  left: 10vw;
+  top: 100vh;
+  overflow: hidden;
+}
+.heading {
+  height: inherit;
+  font-size: large;
 }

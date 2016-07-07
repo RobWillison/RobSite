@@ -8,10 +8,9 @@ var onGoToPage = function (event) {
 
 $('#home').click({page: pages[0]}, onGoToPage);
 
-$('#about').click({page: pages[1]}, onGoToPage);
-$('#projects').click({page: pages[2]}, onGoToPage);
-$('#qualifications').click({page: pages[3]}, onGoToPage);
-$('#experience').click({page: pages[4]}, onGoToPage);
-$('#contact').click({page: pages[5]}, onGoToPage);
+$('#projects').click({page: pages[1]}, onGoToPage);
+$('#qualifications').click({page: pages[2]}, onGoToPage);
+$('#experience').click({page: pages[3]}, onGoToPage);
+$('#contact').click({page: pages[4]}, onGoToPage);
 
 

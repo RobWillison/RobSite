@@ -27,6 +27,10 @@ DivClass = function Div(jqueryDiv) {
         return parseFloat(distanceFromTop);
     }
 
+    this.setHeight = function (height) {
+        this.jqueryDiv.css('height', height + 'px');
+    }
+
     this.setTop = function (top) {
         this.jqueryDiv.css('top', top + 'px');
     }

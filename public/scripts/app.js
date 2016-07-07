@@ -1,7 +1,3 @@
-var getVwInPx = function (vw) {
-    return ($(window).width() / 100) * vw;
-}
-
 AppClass = function App(body, window, armDiv, pages, grabber) {
     this.body = body;
     this.window = window;
@@ -15,7 +11,7 @@ AppClass = function App(body, window, armDiv, pages, grabber) {
     this.pages = pages;
 
     this.page;
-    
+
     this.armSpeed = getVwInPx(0.25);
 
 
@@ -48,13 +44,16 @@ AppClass = function App(body, window, armDiv, pages, grabber) {
         this.arm = new ArmClass(segments);
 
         this.arm.setExtension($(window).height() * 0.2);
+
+        this.moveArmToPosition(this.pages[0]);
+        this.pickUpPage(this.pages[0]);
     }
 
     this.armDown = function (callbacks, self) {
 
         self.armAnimation = setInterval(
             function () {
-                if((self.arm.extension / $(window).height()) < 0.85) {
+                if((self.arm.extension / $(window).height()) < 0.9) {
                     self.arm.setExtension(self.arm.extension + self.armSpeed);
                 } else {
                     clearTimeout(self.armAnimation);
@@ -66,7 +65,6 @@ AppClass = function App(body, window, armDiv, pages, grabber) {
 
             }, 1
         );
-
     }
 
     this.armUp = function (self) {
@@ -89,10 +87,10 @@ AppClass = function App(body, window, armDiv, pages, grabber) {
 
         self.pageAnimation = setInterval(
             function () {
-                var currentPos = self.page.getTop();
                 if ((self.arm.extension / $(window).height()) > 0.2)
                 {
                     self.page.setTop(self.grabber.getTop() + self.grabber.getHeight());
+                    self.page.setHeight($(window).height() - self.grabber.getTop());
                 } else {
                     clearInterval(self.pageAnimation);
                 }
@@ -101,7 +99,7 @@ AppClass = function App(body, window, armDiv, pages, grabber) {
 
         return self.pageAnimation;
     }
-    
+
     this.dropAllPages = function () {
         pages.forEach(function (page) {
             page.drop();
@@ -133,6 +131,10 @@ AppClass = function App(body, window, armDiv, pages, grabber) {
     }
 }
 
+var getVwInPx = function (vw) {
+    return ($(window).width() / 100) * vw;
+}
+
 var getSegmentsRequired = function (){
 
     var maxSegmentHeight = Math.sin(50 * (Math.PI / 180)) * ($("#example-arm-segment").width() - getVwInPx(2));
@@ -142,7 +144,12 @@ var getSegmentsRequired = function (){
 
 var numberOfSegment = parseInt(getSegmentsRequired());
 
-var pages = [new PageClass(0, $('#page')), new PageClass(1, $('#page')), new PageClass(2, $('#page')), new PageClass(3, $('#page')), new PageClass(4, $('#page')), new PageClass(5, $('#page'))];
+var pages = [new PageClass(0, $('#home-page')),
+    new PageClass(1, $('#projects-page')),
+    new PageClass(2, $('#qualifications-page')),
+    new PageClass(3, $('#experience-page')),
+    new PageClass(4, $('#contact-page'))
+];
 
 var app = new AppClass($("body"), $(window), $('#scissor-arm'), pages, new DivClass($('#grabber')));
 
