@@ -1,5 +1,6 @@
 body {
-  background-color: lawngreen;
+  background-color: #fde3ce;
+  color: #2A363B;
 }
 .scissor-arm {
   position: absolute;
@@ -55,17 +56,17 @@ body {
 }
 .grabber-arm-left {
   position: absolute;
-  width: 4vw;
+  width: 5vw;
   height: 4vw;
   top: 10vw;
   left: 0.5vw;
 }
 .grabber-arm-right {
   position: absolute;
-  width: 4vw;
+  width: 5vw;
   height: 4vw;
   top: 10vw;
-  left: 11.5vw;
+  left: 10.5vw;
 }
 .spin-anticlockwise {
   -webkit-animation: spin-anit 2s linear infinite;
@@ -111,14 +112,59 @@ body {
 }
 .page {
   position: absolute;
-  width: 80vw;
   height: 0vh;
+  width: 40vw;
   text-align: center;
-  left: 10vw;
   top: 100vh;
   overflow: hidden;
 }
 .heading {
   height: inherit;
-  font-size: large;
+  font-size: 5vw;
+}
+.page-panel {
+  position: absolute;
+  top: 2.5vw;
+  width: 30vw;
+  left: 5vw;
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 1vw;
+}
+.page-image {
+  width: inherit;
+}
+.qualifications-page {
+  left: 5vw;
+  color: black;
+  width: 50vw;
+}
+.home-page {
+  color: white;
+}
+.contact-page {
+  left: 44vw;
+  color: white;
+  width: 50vw;
+}
+.qualification-image {
+  width: 5vw;
+}
+.qualification-page-panel {
+  top: 10vw;
+  left: 4vw;
+}
+.contact-page-panel {
+  left: 10vw;
+  top: 10vw;
+}
+.navbar-fixed-top {
+  right: inherit;
+  width: 100vw;
+}
+.page-content {
+  -webkit-column-count: 2;
+  /* Chrome, Safari, Opera */
+  -moz-column-count: 2;
+  /* Firefox */
+  column-count: 2;
 }

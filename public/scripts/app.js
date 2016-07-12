@@ -12,7 +12,7 @@ AppClass = function App(body, window, armDiv, pages, grabber) {
 
     this.page;
 
-    this.armSpeed = getVwInPx(0.25);
+    this.armSpeed = getVhInPx(0.5);
 
 
 
@@ -45,7 +45,7 @@ AppClass = function App(body, window, armDiv, pages, grabber) {
 
         this.arm.setExtension($(window).height() * 0.2);
 
-        this.moveArmToPosition(this.pages[0]);
+        this.moveArmToPosition(this.pages[0].position);
         this.pickUpPage(this.pages[0]);
     }
 
@@ -123,8 +123,8 @@ AppClass = function App(body, window, armDiv, pages, grabber) {
     }
 
     this.moveArmToPosition = function(page) {
-        var pageWidth = this.arm.segments[0].leftArm.width;
-        var position = pageWidth * page;
+        var pageWidth = ($(window).width() * 0.8) / this.pages.length;
+        var position = pageWidth * (page);
 
         this.armDiv.css('left', position + 'px');
         $('#grabber').css('left', position + 'px');
@@ -133,6 +133,10 @@ AppClass = function App(body, window, armDiv, pages, grabber) {
 
 var getVwInPx = function (vw) {
     return ($(window).width() / 100) * vw;
+}
+
+var getVhInPx = function (vw) {
+    return ($(window).height() / 100) * vw;
 }
 
 var getSegmentsRequired = function (){
@@ -147,8 +151,7 @@ var numberOfSegment = parseInt(getSegmentsRequired());
 var pages = [new PageClass(0, $('#home-page')),
     new PageClass(1, $('#projects-page')),
     new PageClass(2, $('#qualifications-page')),
-    new PageClass(3, $('#experience-page')),
-    new PageClass(4, $('#contact-page'))
+    new PageClass(3, $('#contact-page'))
 ];
 
 var app = new AppClass($("body"), $(window), $('#scissor-arm'), pages, new DivClass($('#grabber')));

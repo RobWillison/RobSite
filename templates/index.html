@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8"/>
         <title>Rob Willison</title>
-        <link href='styles/main.css' rel='stylesheet' type='text/css'>
 
         <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
 
@@ -15,7 +14,9 @@
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
+        <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+        <link href='styles/main.css' rel='stylesheet' type='text/css'>
     </head>
     <body>
 
@@ -27,13 +28,10 @@
             <ul class="nav navbar-nav">
                 <li><a href="#" id="projects">Projects</a></li>
                 <li><a href="#" id="qualifications">Qualifications</a></li>
-                <li><a href="#" id="experience">Experience</a></li>
                 <li><a href="#" id="contact">Contact Me</a></li>
             </ul>
         </div>
     </nav>
-
-
 
     <div class="arm hidden" id="example-arm-segment"></div>
 
@@ -42,15 +40,22 @@
     </div>
 
     <div class="grabber" id="grabber">
-        <img class="grabber-img" id="grabber-arm" src="images/Grabber.png"/>
+        <img class="grabber-arm-right" id="grabber-arm-right" src="images/right-arm.svg"/>
+        <img class="grabber-arm-left" id="grabber-arm-left" src="images/left-arm.svg"/>
+        <img class="grabber-img" id="grabber-arm" src="images/grabber.svg"/>
     </div>
 
-    <div class="page" id="home-page">
+    <div class="page home-page" id="home-page">
+        <img class="page-image"  src="images/tablet.svg"/>
         <div class="page-panel">
-                <div class="heading">Home</div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed felis eget eros lobortis dapibus sodales a magna. Nullam hendrerit lacinia egestas. Morbi nunc tellus, lacinia quis dui sed, ornare aliquam purus. Etiam pulvinar euismod lacus et condimentum. Nunc sed faucibus nisl. Proin odio lacus, tempus et nisl non, rhoncus rhoncus ligula. Nulla ac libero quis nibh fermentum elementum. Pellentesque ullamcorper erat ipsum, sed sodales leo rutrum at.
+            <div class="heading">Home</div>
+            <div class="heading-break"><i class="fa fa-asterisk" aria-hidden="true"></i></div>
+            <br>
+            <div class="page-content" >
+                I am a Computer Science Student Studying at the University of Bath. I have just completed a year long placement at <a href="http://www.mayden.co.uk/">Mayden</a> in Bath working as a PHP developer.
 
-                Phasellus vehicula pharetra massa. Aenean aliquet ipsum nec augue facilisis laoreet. Proin rutrum sed enim nec ultricies. Mauris non libero vitae nulla aliquam consequat et ut enim. Nam a mauris dignissim, facilisis sem vulputate, congue enim. In scelerisque urna cursus dolor maximus cursus ultrices a neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit enim purus, vitae vulputate mi scelerisque vel. Mauris condimentum egestas nisl, eget aliquet tortor euismod quis. Maecenas non ex ut odio cursus fringilla vel vel augue. In hac habitasse platea dictumst. Donec scelerisque orci non auctor pulvinar. Sed ultrices, eros a dignissim laoreet, purus elit consectetur felis, eu sodales nulla lacus at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc elementum, erat at sagittis hendrerit, ante dolor rutrum enim, non consectetur lorem ante ac purus. Sed sapien est, fermentum cursus tortor eu, interdum ornare dui.
+                Outside of Study I enjoy Whitewater kayaking and Mountain Biking, I am a member of the Bath Uni Canoe Club and have held the position of webmaster on the committee from 2014 - 2016.
+            </div>
         </div>
     </div>
 
@@ -63,35 +68,44 @@
         </div>
     </div>
 
-    <div class="page" id="qualifications-page">
-        <div class="page-panel">
+    <div class="page qualifications-page" id="qualifications-page">
+        <img class="page-image"  src="images/tv.svg"/>
+        <div class="page-panel qualification-page-panel">
             <div class="heading">Qualifications</div>
-
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed felis eget eros lobortis dapibus sodales a magna. Nullam hendrerit lacinia egestas. Morbi nunc tellus, lacinia quis dui sed, ornare aliquam purus. Etiam pulvinar euismod lacus et condimentum. Nunc sed faucibus nisl. Proin odio lacus, tempus et nisl non, rhoncus rhoncus ligula. Nulla ac libero quis nibh fermentum elementum. Pellentesque ullamcorper erat ipsum, sed sodales leo rutrum at.
-
-            Phasellus vehicula pharetra massa. Aenean aliquet ipsum nec augue facilisis laoreet. Proin rutrum sed enim nec ultricies. Mauris non libero vitae nulla aliquam consequat et ut enim. Nam a mauris dignissim, facilisis sem vulputate, congue enim. In scelerisque urna cursus dolor maximus cursus ultrices a neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit enim purus, vitae vulputate mi scelerisque vel. Mauris condimentum egestas nisl, eget aliquet tortor euismod quis. Maecenas non ex ut odio cursus fringilla vel vel augue. In hac habitasse platea dictumst. Donec scelerisque orci non auctor pulvinar. Sed ultrices, eros a dignissim laoreet, purus elit consectetur felis, eu sodales nulla lacus at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc elementum, erat at sagittis hendrerit, ante dolor rutrum enim, non consectetur lorem ante ac purus. Sed sapien est, fermentum cursus tortor eu, interdum ornare dui.
-        </div>
-    </div>
-
-    <div class="page" id="experience-page">
-        <div class="page-panel">
-            <div class="heading">Experience</div>
-
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed felis eget eros lobortis dapibus sodales a magna. Nullam hendrerit lacinia egestas. Morbi nunc tellus, lacinia quis dui sed, ornare aliquam purus. Etiam pulvinar euismod lacus et condimentum. Nunc sed faucibus nisl. Proin odio lacus, tempus et nisl non, rhoncus rhoncus ligula. Nulla ac libero quis nibh fermentum elementum. Pellentesque ullamcorper erat ipsum, sed sodales leo rutrum at.
-
-            Phasellus vehicula pharetra massa. Aenean aliquet ipsum nec augue facilisis laoreet. Proin rutrum sed enim nec ultricies. Mauris non libero vitae nulla aliquam consequat et ut enim. Nam a mauris dignissim, facilisis sem vulputate, congue enim. In scelerisque urna cursus dolor maximus cursus ultrices a neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit enim purus, vitae vulputate mi scelerisque vel. Mauris condimentum egestas nisl, eget aliquet tortor euismod quis. Maecenas non ex ut odio cursus fringilla vel vel augue. In hac habitasse platea dictumst. Donec scelerisque orci non auctor pulvinar. Sed ultrices, eros a dignissim laoreet, purus elit consectetur felis, eu sodales nulla lacus at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc elementum, erat at sagittis hendrerit, ante dolor rutrum enim, non consectetur lorem ante ac purus. Sed sapien est, fermentum cursus tortor eu, interdum ornare dui.
+            <div class="heading-break"><i class="fa fa-asterisk" aria-hidden="true"></i></div>
+            <br>
+            <div>
+                8/1/2016 - Zend Certified PHP Engineer
+                <img class="qualification-image" src="images/zce.jpg"/>
+                <br>
+                14/10/2015 - Certified ScrumMaster®
+                <img class="qualification-image" src="images/csm.png"/>
+            </div>
         </div>
     </div>
 
 
-    <div class="page" id="contact-page">
-        <div class="page-panel">
+    <div class="page contact-page" id="contact-page">
+        <img class="page-image"  src="images/laptop.svg"/>
+        <div class="page-panel contact-page-panel">
             <div class="heading">Contact</div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed felis eget eros lobortis dapibus sodales a magna. Nullam hendrerit lacinia egestas. Morbi nunc tellus, lacinia quis dui sed, ornare aliquam purus. Etiam pulvinar euismod lacus et condimentum. Nunc sed faucibus nisl. Proin odio lacus, tempus et nisl non, rhoncus rhoncus ligula. Nulla ac libero quis nibh fermentum elementum. Pellentesque ullamcorper erat ipsum, sed sodales leo rutrum at.
+            <div class="heading-break"><i class="fa fa-asterisk" aria-hidden="true"></i></div>
+            <br>
+            <form>
+                <div class="form-group center-block">
+                    <label>Email address</label>
+                    <input type="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group center-block">
+                    <label>Message</label>
+                    <textarea rows="5" class="form-control" placeholder="Message"></textarea>
+                </div>
+                <button class="btn btn-default center-block">Submit</button>
+            </form>
 
-            Phasellus vehicula pharetra massa. Aenean aliquet ipsum nec augue facilisis laoreet. Proin rutrum sed enim nec ultricies. Mauris non libero vitae nulla aliquam consequat et ut enim. Nam a mauris dignissim, facilisis sem vulputate, congue enim. In scelerisque urna cursus dolor maximus cursus ultrices a neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit enim purus, vitae vulputate mi scelerisque vel. Mauris condimentum egestas nisl, eget aliquet tortor euismod quis. Maecenas non ex ut odio cursus fringilla vel vel augue. In hac habitasse platea dictumst. Donec scelerisque orci non auctor pulvinar. Sed ultrices, eros a dignissim laoreet, purus elit consectetur felis, eu sodales nulla lacus at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc elementum, erat at sagittis hendrerit, ante dolor rutrum enim, non consectetur lorem ante ac purus. Sed sapien est, fermentum cursus tortor eu, interdum ornare dui.
         </div>
     </div>
+
 
     <script src="scripts/arm.js" ></script>
     <script src="scripts/grabber.js" ></script>
