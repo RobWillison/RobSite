@@ -105,22 +105,23 @@
             <div class="heading">Contact</div>
             <div class="heading-break"><i class="fa fa-asterisk" aria-hidden="true"></i></div>
             <br>
-            <form>
-                <div class="form-group center-block">
+                <div id="email-field-div" class="form-group center-block">
                     <label>Email address</label>
-                    <input type="email" class="form-control" placeholder="Email">
+                    <div class="input-group">
+                        <span class="input-group-addon">@</span>
+                        <input id="email-field" type="email" class="form-control" placeholder="Email">
+                    </div>
                 </div>
                 <div class="form-group center-block">
                     <label>Message</label>
-                    <textarea rows="5" class="form-control" placeholder="Message"></textarea>
+                    <textarea id="message-field" rows="5" class="form-control" placeholder="Message"></textarea>
                 </div>
-                <button class="btn btn-default center-block">Submit</button>
-            </form>
+                <button class="btn btn-default center-block" onclick="sendContactForm()">Submit</button>
 
         </div>
     </div>
 
-
+    <script src="scripts/contact-form.js" ></script>
     <script src="scripts/arm.js" ></script>
     <script src="scripts/grabber.js" ></script>
     <script src="scripts/page.js" ></script>

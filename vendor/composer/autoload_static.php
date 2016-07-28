@@ -16,6 +16,11 @@ class ComposerStaticInita5dd2301b355640bc0d1183821a92444
             'Slim\\Views\\' => 11,
             'Slim\\' => 5,
         ),
+        'R' => 
+        array (
+            'Rob\\Services\\' => 13,
+            'Rob\\' => 4,
+        ),
         'P' => 
         array (
             'Psr\\Http\\Message\\' => 17,
@@ -42,6 +47,14 @@ class ComposerStaticInita5dd2301b355640bc0d1183821a92444
         'Slim\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
+        ),
+        'Rob\\Services\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/services',
+        ),
+        'Rob\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
         'Psr\\Http\\Message\\' => 
         array (
@@ -75,12 +88,24 @@ class ComposerStaticInita5dd2301b355640bc0d1183821a92444
         ),
     );
 
+    public static $classMap = array (
+        'EasyPeasyICS' => __DIR__ . '/..' . '/phpmailer/phpmailer/extras/EasyPeasyICS.php',
+        'PHPMailer' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmailer.php',
+        'PHPMailerOAuth' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmaileroauth.php',
+        'PHPMailerOAuthGoogle' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmaileroauthgoogle.php',
+        'POP3' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.pop3.php',
+        'SMTP' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.smtp.php',
+        'ntlm_sasl_client_class' => __DIR__ . '/..' . '/phpmailer/phpmailer/extras/ntlm_sasl_client.php',
+        'phpmailerException' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmailer.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInita5dd2301b355640bc0d1183821a92444::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInita5dd2301b355640bc0d1183821a92444::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInita5dd2301b355640bc0d1183821a92444::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInita5dd2301b355640bc0d1183821a92444::$classMap;
 
         }, null, ClassLoader::class);
     }
