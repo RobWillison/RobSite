@@ -26,7 +26,7 @@ class Email {
 		$mail->setFrom($email, 'Mailer');
 		$mail->addAddress('Rob@Willison.co.uk', 'Rob');     // Add a recipient
 
-		$mail->Subject = 'From Website';
+		$mail->Subject = 'From ' . $email;
 		$mail->Body    = $body;
 
 		if(!$mail->send()) {

@@ -8,6 +8,19 @@ function sendContactForm() {
     }
 
     $("#email-field-div").removeClass('has-error');
+    $("#email-field").val('');
+    $("#message-field").val('');
+
+    $.ajax({
+        type: "POST",
+        url: '/email',
+        data: {
+            email: email,
+            body: message
+        }
+    });
+
+
 
 
 }
