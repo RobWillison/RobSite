@@ -1,4 +1,7 @@
-logs/*
 .idea/
+
+/vendor/
+logs
+vendor
 
 src/services/emailConfig.php
